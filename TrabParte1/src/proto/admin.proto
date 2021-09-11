@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.helloworld";
+option java_outer_classname = "HelloWorldProto";
+option objc_class_prefix = "HLW";
+
+package helloworld;
+
+service PortalAdmin {
+  // Sends a greeting
+  rpc createUser (Request) returns (Response) {}
+  rpc updateUser (Request) returns (Response) {}
+  rpc deleteUser (Request) returns (Response) {}
+  rpc getUser (Request) returns (Response) {}
+}
+
+// The request message containing the user's name.
+message Request {
+  string name = 1;
+}
+
+// The response message containing the greetings
+message Response {
+  string message = 1;
+}
